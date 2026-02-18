@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-french-blue: #0055a4;
+  --color-navy: #001a3a;
+  --color-charcoal: #1a1a1a;
+  --color-warm-gray: #6b6b6b;
+  --color-silver: #e5e5e5;
+  --color-cream: #fafafa;
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-charcoal);
+  background-color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Subtle linen texture overlay for dark sections */
+.texture-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
